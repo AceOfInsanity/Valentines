@@ -11,16 +11,22 @@ body{
     background: linear-gradient(135deg,#ff758c,#ff7eb3);
     color:white;
     padding:40px;
-    height:100vh;
     overflow:hidden;
 }
 
 .container{
-    margin-top:60px;
+    margin-top:40px;
 }
 
 h1{
     font-size:32px;
+}
+
+img{
+    max-width:90%;
+    max-height:300px;
+    border-radius:20px;
+    margin-bottom:30px;
 }
 
 button{
@@ -49,19 +55,32 @@ button{
     font-size:28px;
     margin-top:30px;
 }
+
+audio{
+    display:none;
+}
 </style>
 </head>
 
 <body>
 
 <div class="container">
-<h1>Will you be my Valentine? ❤️</h1>
+    <!-- CHANGE IMAGE FILE NAME BELOW -->
+    <img src="yourphoto.jpg" alt="Us together">
 
-<button id="yes">Yes 💖</button>
-<button id="no">No 😢</button>
+    <h1>Will you be my Valentine? ❤️</h1>
 
-<div id="msg">You’re stuck with me forever. ❤️</div>
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 😢</button>
+
+    <div id="msg">You’re stuck with me forever. ❤️</div>
 </div>
+
+<!-- MUSIC -->
+<audio autoplay loop>
+    <!-- CHANGE MUSIC FILE NAME BELOW -->
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
 
 <script>
 let yes = document.getElementById("yes");
@@ -77,6 +96,8 @@ let phrases = [
 "That didn’t feel right…",
 "Try that again 😌",
 "I don't think you meant that",
+"Incorrect answer detected 🚨",
+"System error: choose YES",
 "You’re making a mistake",
 "I can do this all day",
 "You know you love me 😘",
@@ -86,10 +107,17 @@ let phrases = [
 "Final warning ⚠️",
 "Okay this is getting awkward",
 "Everyone knows the answer is yes",
-"Even Henry would say yes 🐶",
+"Even the dog would say yes 🐶",
 "I am not above begging",
 "Please? 🥹",
+"I bought snacks…",
+"I'll do the dishes",
+"I'll pick the movie",
+"I'll rub your feet",
 "Alright now you're just testing me",
+"Confidence check required",
+"Destiny says yes",
+"The universe says yes",
 "Your husband says yes",
 "Fine. I’ll just make YES bigger"
 ];
@@ -97,7 +125,6 @@ let phrases = [
 let i = 0;
 
 no.onclick = function(){
-
     if(i < phrases.length){
         no.innerText = phrases[i];
         i++;
