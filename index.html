@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Will You Be My Valentine?</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background: linear-gradient(135deg,#ff758c,#ff7eb3);
+    color:white;
+    padding:40px;
+    height:100vh;
+    overflow:hidden;
+}
+
+.container{
+    margin-top:60px;
+}
+
+h1{
+    font-size:32px;
+}
+
+button{
+    padding:15px 25px;
+    font-size:18px;
+    margin:12px;
+    border:none;
+    border-radius:14px;
+    cursor:pointer;
+    transition:0.25s;
+}
+
+#yes{
+    background:#2ecc71;
+    color:white;
+    font-size:22px;
+}
+
+#no{
+    background:#e74c3c;
+    color:white;
+}
+
+#msg{
+    display:none;
+    font-size:28px;
+    margin-top:30px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1>Will you be my Valentine? ❤️</h1>
+
+<button id="yes">Yes 💖</button>
+<button id="no">No 😢</button>
+
+<div id="msg">You’re stuck with me forever. ❤️</div>
+</div>
+
+<script>
+let yes = document.getElementById("yes");
+let no = document.getElementById("no");
+let msg = document.getElementById("msg");
+
+let size = 22;
+
+let phrases = [
+"Are you sure? 🥺",
+"Really sure??",
+"Think again ❤️",
+"That didn’t feel right…",
+"Try that again 😌",
+"I don't think you meant that",
+"Incorrect answer detected 🚨",
+"System error: choose YES",
+"You’re making a mistake",
+"I can do this all day",
+"You know you love me 😘",
+"Pressing no won’t save you",
+"Be serious for a moment",
+"Last chance…",
+"Final warning ⚠️",
+"Okay this is getting awkward",
+"Everyone knows the answer is yes",
+"Even the dog would say yes 🐶",
+"I am not above begging",
+"Please? 🥹",
+"I bought snacks…",
+"I'll do the dishes",
+"I'll pick the movie",
+"I'll rub your feet",
+"Alright now you're just testing me",
+"Confidence check required",
+"Destiny says yes",
+"The universe says yes",
+"Your husband says yes",
+"Fine. I’ll just make YES bigger"
+];
+
+let i = 0;
+
+no.onclick = function(){
+
+    if(i < phrases.length){
+        no.innerText = phrases[i];
+        i++;
+    } else {
+        no.innerText = "No (not a valid option)";
+    }
+
+    size += 10;
+    yes.style.fontSize = size + "px";
+    yes.style.padding = (size/2) + "px " + size + "px";
+};
+
+yes.onclick = function(){
+    yes.style.display="none";
+    no.style.display="none";
+    msg.style.display="block";
+};
+</script>
+
+</body>
+</html>
